@@ -1,0 +1,22 @@
+{
+  "name": "ads",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently 'sass --no-source-map --watch ./src/scss:./dist/css' 'npx @11ty/eleventy --serve'",
+    "build": "sass --no-source-map ./src/scss:./dist/css && npx @11ty/eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-vue": "^0.6.0",
+    "concurrently": "^7.5.0"
+  },
+  "devDependencies": {
+    "rollup": "^2.79.1"
+  }
+}

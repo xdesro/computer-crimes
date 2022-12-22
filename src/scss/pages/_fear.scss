@@ -1,0 +1,77 @@
+$color-text: #e5e3e4;
+$color-selection: #c95390;
+@font-face {
+  font-family: 'GT America Compressed';
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/GT-America-Compressed-Bold-Italic-Trial.woff2') format('woff2');
+}
+.fear {
+  font-size: 1rem;
+  position: relative;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: $color-text;
+  background-image: url('/img/fear-of-god.jpg');
+  background-position: top center;
+  background-size: cover;
+  ::selection {
+    background-color: rgba($color-selection, 0.5);
+  }
+  &__title {
+    font-size: 5rem;
+    line-height: 1;
+    em {
+      display: block;
+    }
+  }
+  &__intro {
+    font-family: 'GT America Compressed';
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1;
+    max-width: 23ch;
+    margin: 0 auto 1em;
+    margin-bottom: 1em;
+    &:nth-of-type(2) {
+      max-width: 15ch;
+    }
+  }
+  &__window {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__screen {
+    position: absolute;
+    top: 25.6em;
+    left: 9.2em;
+    width: 12.6em;
+    height: 11em;
+    transform: perspective(600px) rotateX(-4deg) rotateY(-10deg) skewX(-7deg);
+    transform-origin: top left;
+    // border: 1px solid red;
+    background-color: #342c2b;
+  }
+  &__canvas {
+    position: relative;
+    z-index: 2;
+  }
+  &__svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+}

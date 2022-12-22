@@ -1,0 +1,7 @@
+body {
+  --viewportWidth: calc(100vw - var(--scrollbarWidth));
+  --viewportHeight: calc(100vh - var(--scrollbarWidth));
+}
+a {
+  color: inherit;
+}

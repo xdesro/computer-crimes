@@ -1,0 +1,135 @@
+$color-text: #e5e3e4;
+$color-background: #131718;
+
+@font-face {
+  font-family: 'GT America Standard';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/GT-America-Standard-Regular-Trial.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GT America Standard';
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/GT-America-Standard-Regular-Italic-Trial.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GT America Condensed';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/GT-America-Condensed-Regular-Trial.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GT America Condensed';
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/GT-America-Condensed-Regular-Italic-Trial.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GT America Condensed';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/GT-America-Condensed-Bold-Trial.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GT America Condensed';
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/GT-America-Condensed-Bold-Italic-Trial.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GT America Condensed';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/GT-America-Condensed-Black-Trial.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GT America Condensed';
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/GT-America-Condensed-Black-Italic-Trial.woff2') format('woff2');
+}
+.cover {
+  font-size: 1vmin;
+  position: relative;
+  padding: 1.5em;
+  letter-spacing: -0.04em;
+  color: $color-text;
+  background-color: $color-background;
+  background-image: url('/img/cover-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  ::selection {
+    background-color: rgba($color-background, 0.8);
+  }
+  &__header {
+    font-family: 'GT America Standard';
+    font-size: 1.575em;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
+    border-bottom: 1px solid currentColor;
+    ins {
+      font-style: italic;
+      text-decoration: none;
+    }
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+  }
+  &__title {
+    font-family: 'GT America Condensed';
+    font-size: 10em;
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+  &__main-feature {
+    font-size: 1.8em;
+    position: absolute;
+    bottom: 1.5em;
+    left: 1.5em;
+    max-width: 35ch;
+    padding: 1em;
+    background-color: $color-background;
+    ::selection {
+      color: $color-background;
+      background-color: rgba($color-text, 0.8);
+    }
+  }
+  &__main-feature-title {
+    font-family: 'GT America Condensed';
+    font-size: 2em;
+    line-height: 1;
+    margin-bottom: 1.25em;
+    text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+    }
+  }
+  &__main-feature-text {
+    font-family: 'GT America Condensed';
+    font-size: 1.25em;
+    line-height: 1;
+    margin-bottom: 1em;
+    &--em {
+      font-style: italic;
+    }
+  }
+}

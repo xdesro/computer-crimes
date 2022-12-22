@@ -1,0 +1,66 @@
+.pages {
+  //   border: 1px solid blue;
+  //   width: 100vw;
+  display: grid;
+  justify-content: start;
+  //   position: fixed;
+  //   left: 0;
+  //   top: 0;
+  counter-reset: page-numbers;
+
+  &:before {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    content: '';
+    pointer-events: none;
+    // background-image: url('/img/noise.png');
+    background-size: cover;
+    filter: url('#noiseFilter');
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+  }
+  @media (min-aspect-ratio: #{$aspect-ratio}) {
+    grid-auto-flow: column;
+    overflow-y: hidden;
+    height: var(--viewportHeight);
+    overscroll-behavior-y: none;
+  }
+}
+
+.page {
+  //   border: 1px solid red;
+  aspect-ratio: $aspect-ratio;
+  width: var(--viewportWidth);
+  @media (min-aspect-ratio: #{$aspect-ratio}) {
+    height: var(--viewportHeight);
+    width: auto;
+  }
+
+  &:before {
+    font-family: 'GT America Condensed';
+    content: counter(page-numbers);
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    color: currentColor;
+  }
+  &:first-child {
+    &:before {
+      content: unset;
+    }
+  }
+  &:nth-of-type(odd) {
+    &:before {
+      left: unset;
+      right: 1rem;
+    }
+  }
+  &:nth-of-type(1) ~ * {
+    counter-increment: page-numbers;
+  }
+}
