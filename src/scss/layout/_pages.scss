@@ -8,6 +8,13 @@
   //   top: 0;
   counter-reset: page-numbers;
 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   &:before {
     position: fixed;
     z-index: 2;
@@ -18,36 +25,39 @@
     display: block;
     content: '';
     pointer-events: none;
+    opacity: 0.5;
+    filter: url('#noiseFilter');
     // background-image: url('/img/noise.png');
     background-size: cover;
-    filter: url('#noiseFilter');
     mix-blend-mode: multiply;
-    opacity: 0.5;
   }
   @media (min-aspect-ratio: #{$aspect-ratio}) {
-    grid-auto-flow: column;
     overflow-y: hidden;
+    grid-auto-flow: column;
     height: var(--viewportHeight);
+
     overscroll-behavior-y: none;
   }
 }
 
 .page {
+  width: var(--viewportWidth);
   //   border: 1px solid red;
   aspect-ratio: $aspect-ratio;
-  width: var(--viewportWidth);
+  position: relative;
   @media (min-aspect-ratio: #{$aspect-ratio}) {
-    height: var(--viewportHeight);
     width: auto;
+    height: var(--viewportHeight);
   }
 
   &:before {
     font-family: 'GT America Condensed';
-    content: counter(page-numbers);
     position: absolute;
-    bottom: 2rem;
-    left: 1rem;
+    bottom: 1em;
+    left: 1em;
+    content: counter(page-numbers);
     color: currentColor;
+    font-size: 2em;
   }
   &:first-child {
     &:before {
@@ -56,8 +66,8 @@
   }
   &:nth-of-type(odd) {
     &:before {
-      left: unset;
       right: 1rem;
+      left: unset;
     }
   }
   &:nth-of-type(1) ~ * {
