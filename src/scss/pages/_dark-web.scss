@@ -1,4 +1,66 @@
+$color-text: #5c5c45;
+@font-face {
+  font-family: 'Apple Garamond';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/AppleGaramondLight-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Apple Garamond';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/AppleGaramondLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Apple Garamond';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/AppleGaramond.woff2') format('woff2');
+}
+
 .dark-web {
+  font-family: 'Apple Garamond';
+  font-size: 1vmin;
+  position: relative;
+  padding: 4em;
+  color: $color-text;
   background-image: url('/img/new-dark-web-bg.jpg');
   background-size: cover;
+  &__title {
+    font-size: 9em;
+    font-weight: 300;
+    line-height: 0.8;
+    max-width: 16ch;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: -0.04em;
+  }
+  &__content {
+    max-width: 19em;
+    margin-top: 3em;
+    margin-left: auto;
+    p {
+      font-size: 1.4em;
+      line-height: 1.2;
+      text-indent: 2em;
+      hyphens: auto;
+    }
+  }
+  &__sigil {
+    display: block;
+    max-width: 5em;
+    margin: 2em auto;
+  }
+  &__footer {
+    font-size: 5.3em;
+    font-weight: 300;
+    position: absolute;
+    bottom: 0.7em;
+    left: 3.7em;
+  }
 }

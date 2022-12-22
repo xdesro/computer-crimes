@@ -8,9 +8,9 @@ $color-selection: #c95390;
   src: url('/fonts/GT-America-Compressed-Bold-Italic-Trial.woff2') format('woff2');
 }
 .fear {
-  font-size: 1rem;
+  font-size: 1vmin;
   position: relative;
-  padding: 3rem 2rem;
+  padding: 3em 2em;
   text-align: center;
   color: $color-text;
   background-image: url('/img/fear-of-god.jpg');
@@ -20,15 +20,16 @@ $color-selection: #c95390;
     background-color: rgba($color-selection, 0.5);
   }
   &__title {
-    font-size: 5rem;
-    line-height: 1;
+    font-size: 10em;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
     em {
       display: block;
     }
   }
   &__intro {
     font-family: 'GT America Compressed';
-    font-size: 1.5rem;
+    font-size: 2.8em;
     font-weight: bold;
     font-style: italic;
     line-height: 1;
@@ -37,6 +38,7 @@ $color-selection: #c95390;
     margin-bottom: 1em;
     &:nth-of-type(2) {
       max-width: 15ch;
+      margin-bottom: 1.6em;
     }
   }
   &__window {
