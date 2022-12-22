@@ -1,4 +1,4 @@
-<article class="page dark-web">
+<article id="new-dark-web" class="page dark-web">
     <h1 class="dark-web__title">Such <em>evils</em> await thee! True terrors of the New Dark Web.</h1>
     <div class="dark-web__content">
         <p>At this horror, it is our guarantee you'll sink nearly to the lichened earth, transfixed with a dread not of
@@ -18,4 +18,11 @@
         </svg>
     </div>
     <footer class="dark-web__footer">What horror resides here.</footer>
+    <svg viewBox="0 0 180 100">
+        <filter id="dark-web-noise" x="0%" y="0%" width="100%" height="100%">
+            <feTurbulence baseFrequency="0.01 0.01" result="NOISE" numOctaves="2" />
+            <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="20" xChannelSelector="R" yChannelSelector="R">
+            </feDisplacementMap>
+        </filter>
+    </svg>
 </article>

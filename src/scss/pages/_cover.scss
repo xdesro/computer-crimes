@@ -1,64 +1,8 @@
 $color-text: #e5e3e4;
 $color-background: #131718;
 
-@font-face {
-  font-family: 'GT America Standard';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/GT-America-Standard-Regular-Trial.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'GT America Standard';
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-  src: url('/fonts/GT-America-Standard-Regular-Italic-Trial.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'GT America Condensed';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/GT-America-Condensed-Regular-Trial.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'GT America Condensed';
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-  src: url('/fonts/GT-America-Condensed-Regular-Italic-Trial.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'GT America Condensed';
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/GT-America-Condensed-Bold-Trial.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'GT America Condensed';
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-  src: url('/fonts/GT-America-Condensed-Bold-Italic-Trial.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'GT America Condensed';
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/GT-America-Condensed-Black-Trial.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'GT America Condensed';
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-  src: url('/fonts/GT-America-Condensed-Black-Italic-Trial.woff2') format('woff2');
-}
 .cover {
-  font-size: 1vmin;
+  font-size: 1.5vmin;
   position: relative;
   padding: 1.5em;
   letter-spacing: -0.04em;
@@ -68,12 +12,21 @@ $color-background: #131718;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
+
+  container-type: size;
+  @media (min-aspect-ratio: #{$aspect-ratio}) {
+    font-size: 1vmin;
+  }
+  &:before {
+    content: unset;
+  }
   ::selection {
     background-color: rgba($color-background, 0.8);
   }
   &__header {
     font-family: 'GT America Standard';
     font-size: 1.575em;
+    font-size: 1.575cqh;
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
@@ -93,7 +46,8 @@ $color-background: #131718;
   }
   &__title {
     font-family: 'GT America Condensed';
-    font-size: 10em;
+    font-size: 12em;
+    font-size: 12cqh;
     font-weight: 900;
     line-height: 0.8;
     letter-spacing: -0.04em;
@@ -101,6 +55,7 @@ $color-background: #131718;
   }
   &__main-feature {
     font-size: 1.8em;
+    font-size: 1.8cqh;
     position: absolute;
     bottom: 1.5em;
     left: 1.5em;

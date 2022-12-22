@@ -1,7 +1,11 @@
 body {
   --viewportWidth: calc(100vw - var(--scrollbarWidth));
   --viewportHeight: calc(100vh - var(--scrollbarWidth));
+
   background-color: #030303;
+  @media (min-aspect-ratio: #{$aspect-ratio}) {
+    overflow-y: hidden;
+  }
 }
 a {
   color: inherit;

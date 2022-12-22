@@ -1,12 +1,7 @@
 .pages {
-  //   border: 1px solid blue;
-  //   width: 100vw;
   display: grid;
   justify-content: start;
-  //   position: fixed;
-  //   left: 0;
-  //   top: 0;
-  counter-reset: page-numbers;
+  counter-reset: pages -1;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -23,11 +18,9 @@
     bottom: 0;
     left: 0;
     display: block;
-    content: '';
     pointer-events: none;
     opacity: 0.5;
     filter: url('#noiseFilter');
-    // background-image: url('/img/noise.png');
     background-size: cover;
     mix-blend-mode: multiply;
   }
@@ -37,40 +30,36 @@
     height: var(--viewportHeight);
 
     overscroll-behavior-y: none;
+    &:before {
+      content: '';
+    }
   }
 }
 
 .page {
-  width: var(--viewportWidth);
-  //   border: 1px solid red;
-  aspect-ratio: $aspect-ratio;
   position: relative;
+  width: var(--viewportWidth);
+  aspect-ratio: $aspect-ratio;
   @media (min-aspect-ratio: #{$aspect-ratio}) {
+    font-size: 1vmin;
     width: auto;
     height: var(--viewportHeight);
   }
 
   &:before {
     font-family: 'GT America Condensed';
+    font-size: 2em;
     position: absolute;
     bottom: 1em;
     left: 1em;
-    content: counter(page-numbers);
+    content: counter(pages);
+    counter-increment: pages;
     color: currentColor;
-    font-size: 2em;
-  }
-  &:first-child {
-    &:before {
-      content: unset;
-    }
   }
   &:nth-of-type(odd) {
     &:before {
       right: 1rem;
       left: unset;
     }
-  }
-  &:nth-of-type(1) ~ * {
-    counter-increment: page-numbers;
   }
 }

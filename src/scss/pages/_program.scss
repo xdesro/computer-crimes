@@ -1,7 +1,6 @@
 $color-text: #f00;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
 .program {
-  font-size: 1vmin;
   display: grid;
   //   align-content: space-between;
   place-items: center;
@@ -9,21 +8,33 @@ $color-text: #f00;
   color: $color-text;
   background-image: url('/img/program-your-computer-bg.jpg');
   background-size: cover;
-  &:before,
+  font-size: 1.5vmin;
+  container-type: size;
+  @media (min-aspect-ratio: #{$aspect-ratio}) {
+    font-size: 1vmin;
+  }
+  &__header,
   &:after {
     font-family: 'Apple Garamond';
     font-size: 3em;
+    font-size: 3cqh;
     font-weight: 300;
-    position: static;
-    content: "Don't forget...";
   }
   &:after {
+    content: 'Don’t forget...';
     transform: rotate(180deg);
   }
+  //   &:before,
+  //   &:after {
+  //
+  //   }
+  //   &:after {
+  //   }
 
   &__title {
     font-family: 'Inter';
     font-size: 6em;
+    font-size: 6cqh;
     line-height: 1;
     position: relative;
     display: grid;
@@ -31,6 +42,8 @@ $color-text: #f00;
     text-transform: uppercase;
 
     gap: 2em;
+    gap: 2cqh;
+
     span {
       position: relative;
       display: block;

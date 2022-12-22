@@ -1,38 +1,20 @@
 $color-text: #5c5c45;
 $color-selection: rgba($color-text, 0.2);
 
-@font-face {
-  font-family: 'Apple Garamond';
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-  src: url('/fonts/AppleGaramondLight-Italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Apple Garamond';
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/AppleGaramondLight.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Apple Garamond';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/AppleGaramond.woff2') format('woff2');
-}
-
 .dark-web {
   font-family: 'Apple Garamond';
-  font-size: 1vmin;
+  font-size: 1.5vmin;
   position: relative;
   padding: 4em;
   color: $color-text;
   background-image: url('/img/new-dark-web-bg.jpg');
   background-size: cover;
+
+  container-type: size;
+  @media (min-aspect-ratio: #{$aspect-ratio}) {
+    font-size: 1vmin;
+  }
+
   ::selection {
     background-color: $color-selection;
   }
@@ -49,6 +31,8 @@ $color-selection: rgba($color-text, 0.2);
     max-width: 19em;
     margin-top: 3em;
     margin-left: auto;
+    padding-bottom: 2em; // Account for displacement offset
+    filter: url('#dark-web-noise');
     p {
       font-size: 1.4em;
       line-height: 1.2;
@@ -63,9 +47,16 @@ $color-selection: rgba($color-text, 0.2);
   }
   &__footer {
     font-size: 5.3em;
+    font-size: 5.3cqh;
+    padding-bottom: 2em;
+    margin-bottom: -1.75em;
     font-weight: 300;
     position: absolute;
     bottom: 0.7em;
     left: 3.7em;
+    filter: url('#dark-web-noise');
+  }
+  > svg {
+    display: none;
   }
 }
