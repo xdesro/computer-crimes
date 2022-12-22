@@ -39,6 +39,8 @@
 .page {
   position: relative;
   width: var(--viewportWidth);
+  counter-increment: pages;
+
   aspect-ratio: $aspect-ratio;
   @media (min-aspect-ratio: #{$aspect-ratio}) {
     font-size: 1vmin;
@@ -53,7 +55,6 @@
     bottom: 1em;
     left: 1em;
     content: counter(pages);
-    counter-increment: pages;
     color: currentColor;
   }
   &:nth-of-type(odd) {
