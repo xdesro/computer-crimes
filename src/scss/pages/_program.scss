@@ -13,6 +13,11 @@ $color-text: #f00;
   @media (min-aspect-ratio: #{$aspect-ratio}) {
     font-size: 1vmin;
   }
+
+  ::selection {
+    background-color: rgba($color-text, 0.1);
+  }
+
   &__header,
   &:after {
     font-family: 'Apple Garamond';
