@@ -57,7 +57,7 @@ $color-background: #131718;
     font-size: 1.8em;
     font-size: 1.8cqh;
     position: absolute;
-    bottom: 1.5em;
+    bottom: 3em;
     left: 1.5em;
     max-width: 35ch;
     padding: 1em;
@@ -87,4 +87,21 @@ $color-background: #131718;
       font-style: italic;
     }
   }
+  &__bluesky-callout {
+    font-family: 'GT America Condensed';
+    font-size: 2em;
+    position: absolute;
+    inset-block-end:0;
+    inset-inline: 0;
+    width: 100%;
+    padding: .25em;
+    text-align: center;
+    background-color: $color-background;
+  }
+  &__bluesky-icon {
+    max-width: 1em;
+    width: 100%;
+    fill: currentColor;
+  }
+
 }
